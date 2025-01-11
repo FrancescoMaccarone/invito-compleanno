@@ -96,5 +96,6 @@ hr {
 
 body {
   background: url('sfondo-compleanno.jpeg') no-repeat center center;
-  background-size: cover; /* O contain, a seconda di cosa preferisci */
+  background-size: cover;
+  background-attachment: scroll; /* Suggerito per evitare problemi su mobile */
 }
