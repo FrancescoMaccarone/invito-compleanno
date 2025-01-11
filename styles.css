@@ -19,7 +19,7 @@ body {
   align-items: center;       /* Centra orizzontalmente */
   
   min-height: 100vh;         /* Occupare tutta l'altezza finestra */
-  background: url('sfondo-compleanno.jpg') no-repeat center center;
+  background: url('sfondo-compleanno.jpeg') no-repeat center center;
   background-size: cover;
 
   font-family: 'Open Sans', sans-serif;
