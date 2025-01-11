@@ -1,0 +1,89 @@
+/* Importa i font da Google Fonts (Oswald per i titoli e Open Sans per il testo) */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Open+Sans&display=swap');
+
+/* Reset di base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Sfondo della pagina con immagine di coriandoli da Pixabay 
+   (se vuoi, sostituisci l'URL con un'altra immagine) */
+body {
+  background: url('https://cdn.pixabay.com/photo/2019/04/08/21/29/confetti-4110078_1280.png') repeat center center;
+  background-size: 400px; /* Regola la dimensione dell’immagine di sfondo */
+  font-family: 'Open Sans', sans-serif;
+  color: #333333;
+  padding: 20px 0; /* Spazio in alto e in basso */
+}
+
+/* Contenitore principale dell’invito */
+.container {
+  width: 600px; /* Larghezza tipica per un invito digitale */
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  padding: 20px 30px;
+}
+
+/* Sezione heading (titolo, immagine in alto) */
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.heading .icon {
+  width: 70px;
+  margin-bottom: 10px;
+}
+
+.heading h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+  color: #2e4053;
+  margin-bottom: 10px;
+}
+
+.heading h1 span {
+  color: #d35400; /* Colore per il nome di Pino */
+}
+
+.heading .emoji {
+  font-size: 1.2em;
+  margin-left: 8px; /* Spazio dopo la scritta */
+}
+
+/* Contenuto del testo */
+.content {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.content strong {
+  color: #2e4053;
+}
+
+/* Righe di separazione decorative */
+hr {
+  margin: 20px 0;
+  border: none;
+  border-top: 2px dashed #bbb;
+  background: transparent;
+}
+
+/* Stile per il link di Google Maps */
+.maps-link {
+  text-decoration: none;
+  color: #d35400;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.maps-link:hover {
+  color: #b33c00;
+}
