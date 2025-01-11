@@ -1,4 +1,3 @@
-/* Esempio: Importa qualche font a piacere */
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Open+Sans&display=swap');
 
 /* Reset base */
@@ -8,98 +7,103 @@
   box-sizing: border-box;
 }
 
-/* Sfondo a tutta pagina */
+/* 
+   BODY: Sfondo a tutta pagina + 
+   Impostazione flex per centrare
+   il contenitore orizzontalmente e verticalmente.
+*/
 body {
-  min-height: 100vh;
-  background: url('sfondo-compleanno.jpeg') no-repeat center center;
-  background-size: cover;
-  font-family: 'Open Sans', sans-serif;
-  position: relative;
-  /* Colore del testo in contrasto: bianco */
-  color: #fff;
-}
-
-/* Se vuoi un overlay scuro o chiaro sullo sfondo (opzionale). 
-   De-commenta la <div class="overlay"></div> nell'HTML 
-   se ti serve più contrasto. */
-.overlay {
-  position: fixed;
-  top: 0; left: 0; bottom: 0; right: 0;
-  background-color: rgba(0, 0, 0, 0.3); 
-  z-index: 1;
-}
-
-/* Contenitore INVISIBILE (nessun sfondo) */
-.container {
-  position: relative;
-  z-index: 2; /* sta sopra l'eventuale overlay */
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 20px 30px;
+  display: flex;             /* Per usare Flexbox */
+  flex-direction: column;    /* Direzione colonna */
+  justify-content: center;   /* Centra verticalmente */
+  align-items: center;       /* Centra orizzontalmente */
   
-  /* Rimuoviamo sfondo bianco, bordi, ecc. */
-  background-color: transparent;
-  border: none;
-  box-shadow: none;
-  border-radius: 0;
+  min-height: 100vh;         /* Occupare tutta l'altezza finestra */
+  background: url('sfondo-compleanno.jpg') no-repeat center center;
+  background-size: cover;
+
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;               /* Testo bianco */
+  text-align: center;        /* Testo centrato */
 }
 
-/* Testo con ombra per migliorare la leggibilità sullo sfondo */
+/* Contenitore INVISIBILE (nessun riquadro) */
+.container {
+  max-width: 600px;
+  padding: 20px;
+  /* Sfondo trasparente: nessuna box-shadow o border */
+  background-color: transparent;
+}
+
+/* Ombra di contorno più forte per la leggibilità:
+   - Ecco un "trucco" con 4 ombre che simulano un contorno nero intorno al testo.
+   - Puoi aumentare/diminuire i valori se vuoi un contorno più spesso/leggero.
+*/
 .container h1,
 .container p,
 .container strong {
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
 }
 
 /* Titolo */
 .container h1 {
   font-family: 'Oswald', sans-serif;
-  font-size: 28px;
+  font-size: 2em;
   margin-bottom: 10px;
 }
 
-.container h1 .emoji {
-  font-size: 1.1em;
+.container .emoji {
   margin-left: 5px;
 }
 
 /* Paragrafi */
 .container p {
-  font-size: 16px;
+  font-size: 1em; /* 16px di base */
   line-height: 1.6;
   margin: 10px 0;
 }
 
-/* Per evidenziare il grassetto, potresti usare un colore vivace 
-   ma lasciamo #fff se vuoi tutto bianco */
+/* Evidenziare un testo in grassetto con colore 
+   diverso (facoltativo).
+   Altrimenti lascia #fff se vuoi tutto in bianco.
+*/
 .container strong {
-  color: #ffd700; /* es. dorato, se vuoi risalto. Oppure #fff */
+  color: #ffd700; /* es. dorato */
 }
 
-/* Righe di separazione (se le vuoi) */
+/* Righe di separazione 
+   (in stile "tratteggiato" e semitrasparente)
+*/
 .container hr {
   margin: 20px 0;
   border: none;
-  border-top: 2px dashed rgba(255,255,255,0.5);
+  border-top: 2px dashed rgba(255,255,255,0.7);
 }
 
-/* Link a Google Maps in evidenza */
+/* Link a Google Maps in giallo/dorato */
 .maps-link {
-  color: #ffd700; /* un giallo/dorato per risalto sullo sfondo scuro */
+  color: #ffd700;
   text-decoration: none;
   font-weight: bold;
 }
 .maps-link:hover {
-  color: #ffb100;
+  color: #ffc300;
 }
 
-/* Responsività base per schermi piccoli */
+/* 
+   Ridimensiona in base allo schermo piccolo
+   se vuoi un layout più compatto.
+*/
 @media (max-width: 600px) {
   .container {
-    margin: 20px auto;
     padding: 15px;
   }
   .container h1 {
-    font-size: 24px;
+    font-size: 1.8em;
   }
 }
+
