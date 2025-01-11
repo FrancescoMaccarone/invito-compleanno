@@ -1,7 +1,7 @@
-/* Importa font (facoltativo) */
+/* Esempio: Importa qualche font a piacere */
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Open+Sans&display=swap');
 
-/* Rimuovi margini di default */
+/* Reset base */
 * {
   margin: 0;
   padding: 0;
@@ -10,102 +10,96 @@
 
 /* Sfondo a tutta pagina */
 body {
-  min-height: 100vh; /* Copre tutta l'altezza finestra */
+  min-height: 100vh;
   background: url('sfondo-compleanno.jpg') no-repeat center center;
   background-size: cover;
   font-family: 'Open Sans', sans-serif;
-  position: relative; 
-  color: #333;
+  position: relative;
+  /* Colore del testo in contrasto: bianco */
+  color: #fff;
 }
 
-/* Se vuoi un overlay scuro/chiaro su tutto lo sfondo (opzionale) */
+/* Se vuoi un overlay scuro o chiaro sullo sfondo (opzionale). 
+   De-commenta la <div class="overlay"></div> nell'HTML 
+   se ti serve più contrasto. */
 .overlay {
   position: fixed;
   top: 0; left: 0; bottom: 0; right: 0;
-  background-color: rgba(0, 0, 0, 0.2); /* Un velo scuro al 20% */
-  /* Se vuoi un velo chiaro, cambia i valori: rgba(255,255,255,0.2) */
+  background-color: rgba(0, 0, 0, 0.3); 
   z-index: 1;
 }
 
-/* Contenitore dell’invito semi-trasparente */
+/* Contenitore INVISIBILE (nessun sfondo) */
 .container {
-  position: relative; 
-  z-index: 2; /* Sta sopra l’overlay */
+  position: relative;
+  z-index: 2; /* sta sopra l'eventuale overlay */
   max-width: 600px;
   margin: 40px auto;
   padding: 20px 30px;
+  
+  /* Rimuoviamo sfondo bianco, bordi, ecc. */
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+}
 
-  /* Sfondo semi-trasparente: vedi il fondo, ma testo in risalto */
-  background-color: rgba(255, 255, 255, 0.7); 
-  border-radius: 10px;
-
-  /* Aggiungi un’ombra leggera */
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+/* Testo con ombra per migliorare la leggibilità sullo sfondo */
+.container h1,
+.container p,
+.container strong {
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
 }
 
 /* Titolo */
 .container h1 {
   font-family: 'Oswald', sans-serif;
   font-size: 28px;
-  color: #2e4053;
   margin-bottom: 10px;
-
-  /* Testo con ombra, miglior lettura su sfondi movimentati */
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
 }
 
-/* Emoji in evidenza */
-.container .emoji {
+.container h1 .emoji {
   font-size: 1.1em;
   margin-left: 5px;
 }
 
-/* Testo generico */
+/* Paragrafi */
 .container p {
   font-size: 16px;
   line-height: 1.6;
   margin: 10px 0;
-  color: #2e4053;
-
-  /* Leggera ombra al testo */
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
-/* Evidenziare testo in grassetto */
+/* Per evidenziare il grassetto, potresti usare un colore vivace 
+   ma lasciamo #fff se vuoi tutto bianco */
 .container strong {
-  color: #d35400;
+  color: #ffd700; /* es. dorato, se vuoi risalto. Oppure #fff */
 }
 
-/* Stile del link a Google Maps */
-.maps-link {
-  color: #d35400;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.maps-link:hover {
-  color: #b33c00;
-}
-
-/* Linea separatrice */
+/* Righe di separazione (se le vuoi) */
 .container hr {
   margin: 20px 0;
   border: none;
-  border-top: 2px dashed #bbb;
+  border-top: 2px dashed rgba(255,255,255,0.5);
 }
 
-/* Responsività di base per schermi piccoli */
+/* Link a Google Maps in evidenza */
+.maps-link {
+  color: #ffd700; /* un giallo/dorato per risalto sullo sfondo scuro */
+  text-decoration: none;
+  font-weight: bold;
+}
+.maps-link:hover {
+  color: #ffb100;
+}
+
+/* Responsività base per schermi piccoli */
 @media (max-width: 600px) {
   .container {
     margin: 20px auto;
     padding: 15px;
   }
-
   .container h1 {
     font-size: 24px;
   }
-}
-('sfondo-compleanno.jpeg') no-repeat center center;
-  background-size: cover;
-  background-attachment: scroll; /* Suggerito per evitare problemi su mobile */
 }
