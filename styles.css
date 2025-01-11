@@ -8,6 +8,46 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: url('sfondo-compleanno.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: scroll; 
+}
+
+/* Overlay semitrasparente */
+.overlay {
+  position: fixed; /* fissa in tutto lo schermo */
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(255, 255, 255, 0.3); /* semitrasparenza */
+  z-index: 1;
+}
+
+/* Container interno */
+.container {
+  position: relative; 
+  z-index: 2;
+  width: 90%; 
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+/* Media query per schermi piccoli */
+@media (max-width: 600px) {
+  body {
+    background-size: contain; 
+  }
+  .container {
+    margin: 20px auto;
+    padding: 10px;
+  }
+}
+
 
 /* Sfondo della pagina con immagine di coriandoli da Pixabay 
    (se vuoi, sostituisci l'URL con un'altra immagine) */
