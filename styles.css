@@ -1,136 +1,111 @@
-/* Importa i font da Google Fonts (Oswald per i titoli e Open Sans per il testo) */
+/* Importa font (facoltativo) */
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Open+Sans&display=swap');
 
-/* Reset di base */
+/* Rimuovi margini di default */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Sfondo a tutta pagina */
 body {
-  margin: 0;
-  font-family: sans-serif;
+  min-height: 100vh; /* Copre tutta l'altezza finestra */
   background: url('sfondo-compleanno.jpg') no-repeat center center;
   background-size: cover;
-  background-attachment: scroll; 
+  font-family: 'Open Sans', sans-serif;
+  position: relative; 
+  color: #333;
 }
 
-/* Overlay semitrasparente */
+/* Se vuoi un overlay scuro/chiaro su tutto lo sfondo (opzionale) */
 .overlay {
-  position: fixed; /* fissa in tutto lo schermo */
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(255, 255, 255, 0.3); /* semitrasparenza */
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background-color: rgba(0, 0, 0, 0.2); /* Un velo scuro al 20% */
+  /* Se vuoi un velo chiaro, cambia i valori: rgba(255,255,255,0.2) */
   z-index: 1;
 }
 
-/* Container interno */
+/* Contenitore dell’invito semi-trasparente */
 .container {
   position: relative; 
-  z-index: 2;
-  width: 90%; 
+  z-index: 2; /* Sta sopra l’overlay */
   max-width: 600px;
-  margin: 50px auto;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  padding: 20px;
-}
-
-/* Media query per schermi piccoli */
-@media (max-width: 600px) {
-  body {
-    background-size: contain; 
-  }
-  .container {
-    margin: 20px auto;
-    padding: 10px;
-  }
-}
-
-
-/* Sfondo della pagina con immagine di coriandoli da Pixabay 
-   (se vuoi, sostituisci l'URL con un'altra immagine) */
-body {
-  background: url('https://cdn.pixabay.com/photo/2019/04/08/21/29/confetti-4110078_1280.png') repeat center center;
-  background-size: 400px; /* Regola la dimensione dell’immagine di sfondo */
-  font-family: 'Open Sans', sans-serif;
-  color: #333333;
-  padding: 20px 0; /* Spazio in alto e in basso */
-}
-
-/* Contenitore principale dell’invito */
-.container {
-  width: 600px; /* Larghezza tipica per un invito digitale */
-  margin: 0 auto;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  margin: 40px auto;
   padding: 20px 30px;
+
+  /* Sfondo semi-trasparente: vedi il fondo, ma testo in risalto */
+  background-color: rgba(255, 255, 255, 0.7); 
+  border-radius: 10px;
+
+  /* Aggiungi un’ombra leggera */
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
-/* Sezione heading (titolo, immagine in alto) */
-.heading {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.heading .icon {
-  width: 70px;
-  margin-bottom: 10px;
-}
-
-.heading h1 {
+/* Titolo */
+.container h1 {
   font-family: 'Oswald', sans-serif;
-  font-size: 30px;
+  font-size: 28px;
   color: #2e4053;
   margin-bottom: 10px;
+
+  /* Testo con ombra, miglior lettura su sfondi movimentati */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
 }
 
-.heading h1 span {
-  color: #d35400; /* Colore per il nome di Pino */
+/* Emoji in evidenza */
+.container .emoji {
+  font-size: 1.1em;
+  margin-left: 5px;
 }
 
-.heading .emoji {
-  font-size: 1.2em;
-  margin-left: 8px; /* Spazio dopo la scritta */
-}
-
-/* Contenuto del testo */
-.content {
-  margin-top: 10px;
+/* Testo generico */
+.container p {
   font-size: 16px;
   line-height: 1.6;
-}
-
-.content strong {
+  margin: 10px 0;
   color: #2e4053;
+
+  /* Leggera ombra al testo */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
-/* Righe di separazione decorative */
-hr {
-  margin: 20px 0;
-  border: none;
-  border-top: 2px dashed #bbb;
-  background: transparent;
-}
-
-/* Stile per il link di Google Maps */
-.maps-link {
-  text-decoration: none;
+/* Evidenziare testo in grassetto */
+.container strong {
   color: #d35400;
+}
+
+/* Stile del link a Google Maps */
+.maps-link {
+  color: #d35400;
+  text-decoration: none;
   font-weight: bold;
-  font-size: 15px;
 }
 
 .maps-link:hover {
   color: #b33c00;
 }
 
-body {
-  background: url('sfondo-compleanno.jpeg') no-repeat center center;
+/* Linea separatrice */
+.container hr {
+  margin: 20px 0;
+  border: none;
+  border-top: 2px dashed #bbb;
+}
+
+/* Responsività di base per schermi piccoli */
+@media (max-width: 600px) {
+  .container {
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  .container h1 {
+    font-size: 24px;
+  }
+}
+('sfondo-compleanno.jpeg') no-repeat center center;
   background-size: cover;
   background-attachment: scroll; /* Suggerito per evitare problemi su mobile */
 }
