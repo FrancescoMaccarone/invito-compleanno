@@ -8,6 +8,12 @@
   box-sizing: border-box;
 }
 
+.container {
+  width: 600px;
+  float: right; /* Va a destra */
+  margin: 20px;
+}
+
 /* Sfondo della pagina con immagine di coriandoli da Pixabay 
    (se vuoi, sostituisci l'URL con un'altra immagine) */
 body {
@@ -86,4 +92,9 @@ hr {
 
 .maps-link:hover {
   color: #b33c00;
+}
+
+body {
+  background: url('sfondo-compleanno.jpg') no-repeat center center;
+  background-size: cover; /* O contain, a seconda di cosa preferisci */
 }
