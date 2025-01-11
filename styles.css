@@ -8,11 +8,6 @@
   box-sizing: border-box;
 }
 
-.container {
-  width: 600px;
-  float: right; /* Va a destra */
-  margin: 20px;
-}
 
 /* Sfondo della pagina con immagine di coriandoli da Pixabay 
    (se vuoi, sostituisci l'URL con un'altra immagine) */
